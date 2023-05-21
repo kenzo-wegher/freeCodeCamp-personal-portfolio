@@ -21,9 +21,10 @@ html {
 
 /* HEADER SECTION */
 #header {
-  width: 100vw;
+  width: 100%;
   position: fixed;
   background: linear-gradient(-45deg, var(--dark-orange) 0%, var(--orange) 20%, var(--light-orange) 45%, var(--orange) 85%);
+  z-index: 2;
 }
 
 #navbar {
@@ -74,12 +75,12 @@ html {
 }
 
 /* PROJECT SECTION */
-#project {
+#projects {
   width: 100vw;
   background: linear-gradient(-45deg, var(--dark-orange) 0%, var(--orange) 20%, var(--light-orange) 45%, var(--orange) 85%);
   padding: 3.8888888889rem 0;
 }
-#project h2 {
+#projects h2 {
   text-align: center;
   color: var(--dark);
   padding-bottom: 1.6666666667rem;
@@ -93,34 +94,37 @@ html {
   grid-gap: 2rem;
   justify-content: center;
 }
-#project-container a {
+
+.project-boxes {
   width: 100%;
-  height: 40vh;
-  padding-bottom: 3.8888888889rem;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 0.0555555556rem solid var(--dark);
   border-radius: 0.2222222222rem;
   background-color: var(--orange-2);
   text-align: center;
   text-decoration: none;
 }
-#project-container a img {
-  height: 100%;
-  display: block;
-  margin: 0 auto;
+.project-boxes a {
+  position: relative;
+  width: 100%;
+  padding-bottom: 85%;
+  max-height: 400px;
+  z-index: 1;
+}
+.project-boxes a img {
+  width: 60%;
+  height: 85%;
+  max-height: 300px;
   padding: 0.5555555556rem;
 }
-#project-container a p {
+.project-boxes .project-title-container p {
   color: var(--dark);
   font-size: 1.2rem;
-  padding-top: 0.2777777778rem;
+  padding: 0.2777777778rem 0 1.1111111111rem 0;
   font-weight: bold;
 }
-#project-container a p:hover .code {
-  display: inline-block;
-  transform: translateX(-0.0555555556rem);
-}
-
-.code {
+.project-boxes .project-title-container p .code {
   color: var(--light-gray);
   font-weight: lighter;
   font-size: 1.4rem;
@@ -164,7 +168,6 @@ html {
 
 /* FOOTER SECTION */
 #footer {
-  width: 100vw;
   background: linear-gradient(-45deg, var(--dark-orange) 0%, var(--orange) 20%, var(--light-orange) 45%, var(--orange) 85%);
   display: flex;
   justify-content: space-around;
@@ -176,4 +179,31 @@ html {
 #footer p a {
   color: var(--dark);
   text-decoration: none;
+}
+
+@media only screen and (max-width: 815px) {
+  #welcome-section {
+    height: 60vh;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0 0.2777777778rem;
+  }
+  #welcome-section {
+    height: 70vh;
+  }
+  #contact h1 {
+    font-size: 1.8rem;
+  }
+  .contact-links a > i {
+    font-size: 1.5rem;
+  }
+  .contact-text {
+    font-size: 0.8rem;
+  }
+  #footer p {
+    font-size: 0.8rem;
+  }
 }/*# sourceMappingURL=index.css.map */
